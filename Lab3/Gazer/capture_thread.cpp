@@ -1,5 +1,4 @@
 #include <QTime>
-#include <QtConcurrent>
 #include <QDebug>
 
 #include "utilities.h"

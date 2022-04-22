@@ -1,7 +1,7 @@
 TEMPLATE = app
 TARGET = Gazer
 INCLUDEPATH += .
-QT       += core gui multimedia network concurrent
+QT       += core gui multimedia
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++11
@@ -26,8 +26,10 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
+
 win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../opencv/build/x64/vc15/lib/ -lopencv_world455
 else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../opencv/build/x64/vc15/lib/ -lopencv_world455d
+else:unix: LIBS += -L$$PWD/../../opencv/build/x64/vc15/lib/ -lopencv_world455
 
 INCLUDEPATH += $$PWD/../../opencv/build/include
 DEPENDPATH += $$PWD/../../opencv/build/include
